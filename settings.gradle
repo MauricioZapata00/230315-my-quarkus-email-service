@@ -1,0 +1,15 @@
+pluginManagement {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+        mavenLocal()
+    }
+    plugins {
+        id "${quarkusPluginId}" version "${quarkusPluginVersion}"
+    }
+}
+rootProject.name='ms-email-service'
+include 'adapter'
+include 'adapter:rest-client'
+findProject(':adapter:rest-client')?.name = 'rest-client'
+
